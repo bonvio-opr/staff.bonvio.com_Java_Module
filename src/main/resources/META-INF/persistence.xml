@@ -16,6 +16,7 @@
         <class>net.bonvio.model.Social</class>
         <class>net.bonvio.model.Tag</class>
         <class>net.bonvio.model.Task</class>
+        <class>net.bonvio.model.Ticket</class>
         <class>net.bonvio.model.User</class>
         <class>net.bonvio.model.Website</class>
 
@@ -26,8 +27,9 @@
 
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
 
-            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.50.77:3306/com.bonvio.staff_dev" />
-
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.50.77:3306/com.bonvio.staff" />
+            <!--<property name="hibernate.connection.url" value="jdbc:mysql://192.168.50.77:3306/com.bonvio.staff_dev" />
+-->
             <property name="hibernate.connection.username" value="external" />
 
             <property name="hibernate.connection.password" value="y3l0l3k0r" />
