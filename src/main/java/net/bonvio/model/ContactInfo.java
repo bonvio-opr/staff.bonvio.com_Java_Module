@@ -1,7 +1,6 @@
 package net.bonvio.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
 import net.bonvio.settings.ResponseId;
 
 import javax.persistence.*;
@@ -15,6 +14,7 @@ import java.util.List;
  */
 
 @Entity
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Inheritance(strategy= InheritanceType.JOINED)
 public class ContactInfo extends ResponseId implements Serializable {
@@ -27,20 +27,15 @@ public class ContactInfo extends ResponseId implements Serializable {
     private String address;
     private String description;
     private String visible;
-    @OneToMany (mappedBy = "contactInfo")
-    @JsonIgnore
+    @OneToMany (mappedBy = "contactInfo", fetch = FetchType.EAGER)
     private List<Phone> phoneList = new ArrayList<>();
-    @OneToMany (mappedBy = "contactInfo")
-    @JsonIgnore
+    @OneToMany (mappedBy = "contactInfo", fetch = FetchType.EAGER)
     private List<Website> websiteList = new ArrayList<>();
-    @OneToMany (mappedBy = "contactInfo")
-    @JsonIgnore
+    @OneToMany (mappedBy = "contactInfo", fetch = FetchType.EAGER)
     private List<Email> emailList = new ArrayList<>();
-    @OneToMany (mappedBy = "contactInfo")
-    @JsonIgnore
+    @OneToMany (mappedBy = "contactInfo", fetch = FetchType.EAGER)
     private List<Social> socialList = new ArrayList<>();
-    @OneToMany (mappedBy = "contactInfo")
-    @JsonIgnore
+    @OneToMany (mappedBy = "contactInfo", fetch = FetchType.EAGER)
     private List<Tag> tagList = new ArrayList<>();
     @OneToMany (mappedBy = "contactFrom")
     @JsonIgnore

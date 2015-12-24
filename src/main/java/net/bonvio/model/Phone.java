@@ -1,6 +1,6 @@
 package net.bonvio.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.*;
 import net.bonvio.settings.ResponseId;
 
 import javax.persistence.*;
@@ -12,6 +12,7 @@ import java.io.Serializable;
  */
 
 @Entity
+//@JsonIdentityInfo(generator=ObjectIdGenerators.PropertyGenerator.class, property="id", scope = ContactInfo.class)
 public class Phone extends ResponseId implements Serializable {
     //@Override
     @Id
