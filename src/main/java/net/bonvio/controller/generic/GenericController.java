@@ -23,14 +23,12 @@ public class GenericController<T> {
     @Autowired
     private GenericService<T> tGenericService;
 
-
     private Class<T> tClass;
 
     @SuppressWarnings("unchecked")
     public GenericController() {
         tClass = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
     }
-
 
     @RequestMapping(
             value = "",

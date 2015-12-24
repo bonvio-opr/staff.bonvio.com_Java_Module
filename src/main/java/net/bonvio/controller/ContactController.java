@@ -27,7 +27,8 @@ public class ContactController extends GenericController<Contact> {
     @RequestMapping(
             value = "{fromId}/{toId}",
             method = RequestMethod.GET,
-            produces = MediaType.APPLICATION_JSON_VALUE)
+            produces = MediaType.APPLICATION_JSON_VALUE
+    )
     @ResponseBody
     public ResponseEntity<Void> addFriend(@PathVariable Integer fromId, @PathVariable Integer toId) {
         try {

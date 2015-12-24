@@ -17,6 +17,7 @@
         <class>net.bonvio.model.Tag</class>
         <class>net.bonvio.model.Task</class>-->
         <class>net.bonvio.model.Ticket</class>
+        <class>net.bonvio.model.StaticPage</class>
         <!--<class>net.bonvio.model.User</class>
         <class>net.bonvio.model.Website</class>-->
 
