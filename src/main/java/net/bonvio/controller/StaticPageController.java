@@ -13,18 +13,22 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @Controller
-@RequestMapping("nav")
+@RequestMapping("page")
 public class StaticPageController extends GenericController<StaticPage> {
 
     @Autowired
     private StaticPageService staticPageService;
 
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    /*@RequestMapping(value = "/index", method = RequestMethod.GET)
     @ResponseBody
     public Object getByLink(@RequestParam("link") String link) {
-        System.out.println("gggg" + link);
         return staticPageService.getByLink(link);
-        //return null;
+    }*/
+
+    @RequestMapping(value = "/index.{link}", method = RequestMethod.GET)
+    @ResponseBody
+    public Object getByLink(@PathVariable String link) {
+        return staticPageService.getByLink(link);
     }
 
 }
